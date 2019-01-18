@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fullPage/css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/planti.css">
+    <link rel="stylesheet" href="chart/css/default.css">
+</head>
+<style>
+    @media (min-width: 1200px) {
+        .container{
+            width: 1920px;
+        }
+    }
+    @media (max-width: 768px) {
+        #fp-nav{
+            display: none;
+        }
+    }
+    nav{
+        background: rgba(255,255,255,.7)!important;
+    }
+    .active a{
+        background: rgba(255,255,255,1)!important;
+    }
+
+    .movie {
+        float: left;
+        margin-top: -120px;
+    }
+    .movie__card {
+        position: relative;
+        background: rgba(255,255,255,.3);
+        height: 250px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        text-align: center;
+        border-radius:10px;
+        box-shadow:0px 0px 70px #000000;
+        padding: 2%;
+        color: #000000;
+    }
+    .movie__card h1{
+        font-size: 5em;
+    }
+    .movie__card p{
+        font-size: 18px;
+        line-height: 2.5em;
+        margin-bottom: 0;
+    }
+    .movie__card.hover-in {
+        transition: .3s ease-out;
+    }
+    .movie__card.hover-out {
+        transition: .3s ease-in;
+    }
+
+    /*第二屏*/
+    .portrait{
+        text-align: center;
+        top: 20%;
+        opacity: 0;
+    }
+    /*第二屏动画*/
+    .portraitAnimation{
+        animation:mymove 5s infinite;
+        -webkit-animation:mymove 2s linear;
+    }
+    @keyframes mymove
+    {
+        from {opacity: 0;left:-50px;}
+        to {opacity: 1;left:0px;}
+    }
+
+    @-webkit-keyframes mymove
+    {
+        from {opacity: 0;left:-50px;}
+        to {opacity: 1;left:0px;}
+    }
+    /*第三屏动画*/
+    .threeAnimation{
+        animation:threeAnimation 5s infinite;
+        -webkit-animation:threeAnimation 2s linear;
+    }
+    @keyframes threeAnimation
+    {
+        from {opacity: 0;left:47%;}
+        to {opacity: 1;left:50%;}
+    }
+
+    @-webkit-keyframes threeAnimation
+    {
+        from {opacity: 0;left:47%;}
+        to {opacity: 1;left:50%;}
+    }
+
+    .portrait img{
+        width: 25%;
+        border-radius: 50%;
+    }
+    .twoBg{
+        width: 100%;
+        height: 100vh;
+        background:url("images/twoBg.png") 0 0 no-repeat;
+    }
+    .twoText{
+        margin-top: 20px;
+        font-size: 18px;
+        color: #ffffff;
+        line-height: 2em;
+    }
+    .twoColor{
+        height: 100vh;
+        width: 100%;
+        background: rgba(0,0,0,.4);
+    }
+    .skillBg{
+        width: 100%;
+        height: 100vh;
+        background: url("images/skill.png") no-repeat;
+        background-size:cover;
+    }
+    .bgColor{
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,.2);
+    }
+</style>
+<body data-spy="scroll" data-target="#menu" style="overflow: auto">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">logo</a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right" id="menu">
+                        <li class="active" data-menuanchor="page1"><a href="#page1"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+                        <li data-menuanchor="page2"><a href="#page2"><span class="glyphicon glyphicon-list"></span> 技能掌握</a></li>
+                        <li data-menuanchor="page3"><a href="#page3"><span class="glyphicon glyphicon-fire"></span> 我的经历</a></li>
+                        <!--<li data-menuanchor="page4"><a href="#page4"><span class="glyphicon glyphicon-question-sign"></span> 我的作品</a></li>
+                        <li data-menuanchor="page5"><a href="#page5"><span class="glyphicon glyphicon-question-sign"></span> 联系我</a></li>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="fullpage">
+            <!--第一屏-->
+            <div class="section">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="movie col-lg-4 col-lg-offset-4">
+                            <div class="movie__card">
+                                <h1>Hello,World!</h1>
+                                <h2>I can because i think i can</h2>
+                                <p>我叫张振滨</p>
+                                <p>一名前端工程师</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--轮播图背景-->
+                <div class="slideshow">
+                    <div class="slideshow-image" style="background-image: url('images/1.jpg')"></div>
+                    <div class="slideshow-image" style="background-image: url('images/2.jpg')"></div>
+                    <div class="slideshow-image" style="background-image: url('images/3.jpg')"></div>
+                    <div class="slideshow-image" style="background-image: url('images/4.jpg')"></div>
+                </div>
+
+            </div>
+            <!--第二屏我的介绍-->
+            <div class="section section2">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="twoBg">
+                            <div class="twoColor">
+                                <div class="portrait col-lg-6 col-lg-offset-3">
+                                    <img src="images/portrait.png" alt="">
+                                    <div class="twoText">
+                                        <p>您好，我叫ash-sky，坐标上海。 我是计算机专业,对前端很感兴趣，今后的职业规划是朝着全栈发展，目前在学Vue、Node。 在实习的五个月来,本人在公司主要负责整个页面的前端开发，配合后台人员实现产品前端界面</p>
+                                        <p>您好，我叫ash-sky，坐标上海。 我是计算机专业,对前端很感兴趣，今后的职业规划是朝着全栈发展，目前在学Vue、Node。 在实习的五个月来,本人在公司主要负责整个页面的前端开发，配合后台人员实现产品前端界面</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--我的技能-->
+            <div class="section section3">
+                <!--图表-->
+                <div class="skillBg">
+                    <div class="bgColor">
+                        <div id="content">
+                            <div class="legend">
+                                <h1>skills:</h1>
+                                <div class="skills">
+                                    <ul>
+                                        <li class="jq">JavaScript</li>
+                                        <li class="css">CSS3</li>
+                                        <li class="html">HTML5</li>
+                                        <li class="node">Node</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="diagram"></div>
+                        </div>
+
+                        <div class="footer">
+                            <div class="inside">
+
+                            </div>
+                        </div>
+
+                        <div class="get">
+                            <div class="arc">
+                                <span class="text">JavaScript</span>
+                                <input type="hidden" class="percent" value="95" />
+                                <input type="hidden" class="color" value="#97BE0D" />
+                            </div>
+                            <div class="arc">
+                                <span class="text">CSS3</span>
+                                <input type="hidden" class="percent" value="90" />
+                                <input type="hidden" class="color" value="#D84F5F" />
+                            </div>
+                            <div class="arc">
+                                <span class="text">HTML5</span>
+                                <input type="hidden" class="percent" value="80" />
+                                <input type="hidden" class="color" value="#88B8E6" />
+                            </div>
+                            <div class="arc">
+                                <span class="text">Node</span>
+                                <input type="hidden" class="percent" value="10" />
+                                <input type="hidden" class="color" value="#BEDBE9" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+<script src="jquery-3.1.1.min.js"></script>
+<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="jquery.hover3d.min.js"></script>
+<script src="fullPage/js/jquery.fullPage.js"></script>
+<script src="chart/js/init.js"></script>
+<script src="chart/js/raphael.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('#fullpage').fullpage({
+                    //滚动后的回调
+                    afterLoad:function (anchorLink,index) {
+                        //第二屏动画
+                        if (index==2){
+                            $(".portrait").addClass("portraitAnimation");
+                            $(".portrait").css("opacity","1");
+                        };
+                        //第三屏动画
+                        if (index==3){
+                            $("#content").addClass("threeAnimation");
+                            $("#content").css("opacity","1");
+                        }
+                        $("#navbar-collapse ul").find("li").removeClass("active");
+                        $("#navbar-collapse ul").find("li").eq(index-1).addClass("active");
+                    },
+                    'navigation': true,
+                    //加载页面(加载第一屏的回调)
+                    "afterRender":function () {
+                        console.log(123);
+                    },
+                    anchors: ['page1', 'page2', 'page3'],
+                    menu: '#menu'
+                });
+            });
+
+
+            $(document).ready(function () {
+                //导航条的点击active
+                navClick()
+                $(".movie").hover3d({
+                    selector: ".movie__card",
+                    shine: true,
+                    sensitivity: 20,
+                });
+            })
+            
+            
+            function navClick() {
+                for (var i =0; i< $("#navbar-collapse ul").find("li").length;i++){
+                        $("#navbar-collapse ul").find("li").eq(i).data("key", i);
+                        $("#navbar-collapse ul").find("li").eq(i).click(function () {
+                        $("#navbar-collapse ul").find("li").removeClass("active");
+                        $("#navbar-collapse ul").find("li").eq($(this).data("key")).addClass("active");
+                    })
+                }
+
+            }
+        </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
